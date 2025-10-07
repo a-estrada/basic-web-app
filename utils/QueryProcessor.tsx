@@ -15,8 +15,8 @@ export default function QueryProcessor(query: string): string {
     return "alejande";
   }
 
-  if (query.toLowerCase().includes("name")) {
-    return "Alejandro";
+  if (query.toLowerCase().includes("what is your name?")) {
+    return "Alejandro Estrada";
   }
 
   return "";
