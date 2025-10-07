@@ -39,5 +39,17 @@ export default function QueryProcessor(query: string): string {
     }
   }
 
+  const additionPattern = /what is (\d+) plus (\d+)\?/i;
+  const additionMatch = query.match(additionPattern);
+  if (additionMatch && additionMatch.length === 3) {
+    const num1 = parseInt(additionMatch[1], 10);
+    const num2 = parseInt(additionMatch[2], 10);
+
+    if (!isNaN(num1) && !isNaN(num2)) {
+      const sum = num1 + num2;
+      return sum.toString();
+    }
+  }
+
   return "";
 }
